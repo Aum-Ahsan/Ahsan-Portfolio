@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/hooks/use-theme';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -15,6 +16,7 @@ const navItems = [
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
@@ -52,6 +54,13 @@ const Navigation = () => {
                   )}
                 </Link>
               ))}
+              <button
+                aria-label="Toggle theme"
+                onClick={toggleTheme}
+                className="ml-4 inline-flex h-9 w-9 items-center justify-center rounded-md border border-card-border bg-card text-foreground hover:text-neon-blue hover:border-neon-blue transition-colors"
+              >
+                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -94,6 +103,14 @@ const Navigation = () => {
                   </Link>
                 </motion.div>
               ))}
+              <button
+                aria-label="Toggle theme"
+                onClick={toggleTheme}
+                className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-md border border-card-border bg-card text-foreground hover:text-neon-blue hover:border-neon-blue transition-colors"
+              >
+                <span className="mr-2">{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
             </div>
           </motion.div>
         )}

@@ -6,11 +6,11 @@
 
 @layer base {
   :root {
-    /* Deep space backgrounds */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --space-dark: 240 15% 2%;
-    --space-medium: 240 12% 6%;
+    /* Light mode (default) */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --space-dark: 0 0% 98%;
+    --space-medium: 240 4.8% 95.9%;
     
     /* Neon accents */
     --neon-blue: 200 100% 60%;
@@ -19,31 +19,31 @@
     --neon-pink: 320 100% 75%;
     
     /* Card system */
-    --card: 240 12% 6%;
-    --card-foreground: 0 0% 95%;
-    --card-border: 240 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --card-border: 220 13% 91%;
     
     /* Interactive elements */
-    --primary: 200 100% 60%;
-    --primary-foreground: 240 10% 3.9%;
-    --primary-glow: 200 100% 70%;
+    --primary: 224.3 76.3% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 224.3 76.3% 60%;
     
-    --secondary: 280 100% 70%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-glow: 280 100% 80%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --secondary-glow: 240 4.8% 90%;
     
     /* UI elements */
-    --muted: 240 15% 15%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 180 100% 65%;
-    --accent-foreground: 240 10% 3.9%;
+    --muted: 240 5% 94%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
     
-    --destructive: 0 75% 60%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 240 15% 15%;
-    --input: 240 12% 8%;
-    --ring: 200 100% 60%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 217.2 91.2% 59.8%;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-purple)));
@@ -54,7 +54,7 @@
     /* Shadows and glows */
     --shadow-neon: 0 0 20px hsl(var(--neon-blue) / 0.5);
     --shadow-purple: 0 0 30px hsl(var(--neon-purple) / 0.4);
-    --shadow-cyber: 0 4px 20px hsl(var(--background)), 0 0 40px hsl(var(--neon-blue) / 0.2);
+    --shadow-cyber: 0 4px 20px hsl(0 0% 0% / 0.05), 0 0 40px hsl(var(--neon-blue) / 0.15);
     
     --radius: 0.75rem;
 
