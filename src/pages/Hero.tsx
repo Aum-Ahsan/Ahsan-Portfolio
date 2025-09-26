@@ -71,6 +71,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
+                onClick={() => window.location.href = '/contact'}
               >
                 <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                 Let's Connect

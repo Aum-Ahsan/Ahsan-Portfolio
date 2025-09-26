@@ -7,6 +7,10 @@ import { AnimatePresence } from "framer-motion";
 import Navigation from "./components/Navigation";
 import Hero from "./pages/Hero";
 import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Skills from "./pages/Skills";
+import Articles from "./pages/Articles";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,10 +27,10 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Hero />} />
               <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<div className="pt-20 min-h-screen flex items-center justify-center"><h1 className="text-4xl gradient-text">Projects Coming Soon</h1></div>} />
-              <Route path="/skills" element={<div className="pt-20 min-h-screen flex items-center justify-center"><h1 className="text-4xl gradient-text">Skills Coming Soon</h1></div>} />
-              <Route path="/articles" element={<div className="pt-20 min-h-screen flex items-center justify-center"><h1 className="text-4xl gradient-text">Articles Coming Soon</h1></div>} />
-              <Route path="/contact" element={<div className="pt-20 min-h-screen flex items-center justify-center"><h1 className="text-4xl gradient-text">Contact Coming Soon</h1></div>} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/articles" element={<Articles />} />
+              <Route path="/contact" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
