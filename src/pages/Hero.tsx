@@ -20,6 +20,31 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
+            {/* Profile Photo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-8"
+            >
+              <div className="relative inline-block">
+                <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-neon-blue shadow-2xl neon-glow">
+                  <img
+                    src="/profile-photo.jpg"
+                    alt="Ahsan - Automation Engineer"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to a placeholder if image doesn't exist
+                      e.currentTarget.src = "/profile-photo-placeholder.svg";
+                    }}
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-neon-green rounded-full border-2 border-background flex items-center justify-center">
+                  <div className="w-3 h-3 bg-neon-green rounded-full animate-pulse"></div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Greeting */}
             <motion.p
               initial={{ opacity: 0, x: -50 }}
@@ -47,7 +72,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="text-xl md:text-3xl lg:text-4xl text-muted-foreground font-light"
             >
-              Full Stack Developer & <span className="text-neon-purple">Creative Coder</span>
+              Automation Engineer & <span className="text-neon-purple">Process Optimizer</span>
             </motion.h2>
 
             {/* Description */}
@@ -57,8 +82,8 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
-              Crafting exceptional digital experiences with cutting-edge technologies. 
-              Passionate about creating innovative solutions that make a difference.
+              Specializing in automation solutions and process optimization. 
+              Passionate about streamlining workflows and implementing intelligent systems that enhance efficiency and productivity.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -95,10 +120,10 @@ const Hero = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 max-w-3xl mx-auto"
             >
               {[
-                { number: "50+", label: "Projects Completed" },
+                { number: "50+", label: "Automation Projects" },
                 { number: "3+", label: "Years Experience" },
-                { number: "20+", label: "Technologies" },
-                { number: "100%", label: "Client Satisfaction" },
+                { number: "15+", label: "Processes Optimized" },
+                { number: "95%", label: "Efficiency Gains" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
