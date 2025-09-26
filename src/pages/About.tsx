@@ -52,7 +52,7 @@ const About = () => {
                 <h2 className="text-2xl font-bold text-neon-blue mb-4">My Journey</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    I'm a passionate full-stack developer with over 3 years of experience 
+                    I'm Ahsan passionate full-stack developer with over 3 years of experience 
                     creating innovative digital solutions. My journey began with curiosity 
                     about how things work on the web, and it has evolved into a deep love 
                     for crafting exceptional user experiences.
