@@ -5,17 +5,17 @@ import { Code, Coffee, Zap, Heart, Settings, Cpu, Workflow, Target } from 'lucid
 
 const About = () => {
   const skills = [
-    { name: "Process Automation", level: 95, color: "neon-blue" },
-    { name: "RPA Tools", level: 88, color: "neon-purple" },
-    { name: "Workflow Design", level: 90, color: "neon-cyan" },
-    { name: "System Integration", level: 85, color: "neon-pink" },
+    { name: "Frontend", level: 95, color: "neon-blue" },
+    { name: "Backend", level: 88, color: "neon-purple" },
+    { name: "Mobile", level: 82, color: "neon-cyan" },
+    { name: "DevOps", level: 75, color: "neon-pink" },
   ];
 
   const interests = [
-    { icon: Settings, title: "Process Optimization", description: "Streamlining workflows for maximum efficiency" },
-    { icon: Cpu, title: "Automation Tools", description: "Mastering RPA and automation platforms" },
-    { icon: Workflow, title: "System Integration", description: "Connecting disparate systems seamlessly" },
-    { icon: Target, title: "Quality Assurance", description: "Ensuring reliable and accurate automation" },
+    { icon: Code, title: "Clean Code", description: "Writing maintainable and scalable code" },
+    { icon: Coffee, title: "Coffee Lover", description: "Fuel for late-night coding sessions" },
+    { icon: Zap, title: "Innovation", description: "Always exploring new technologies" },
+    { icon: Heart, title: "Open Source", description: "Contributing to the community" },
   ];
 
   return (
@@ -31,11 +31,12 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
-              About Me
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+            
+              <span className="gradient-text">About Me</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Automation engineer passionate about optimizing processes and streamlining workflows
+              Passionate developer crafting digital experiences that matter
             </p>
           </motion.div>
 
@@ -51,22 +52,21 @@ const About = () => {
                 <h2 className="text-2xl font-bold text-neon-blue mb-4">My Journey</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    I'm a dedicated automation engineer with over 3 years of experience 
-                    in process optimization and workflow automation. My journey began with 
-                    a fascination for making repetitive tasks more efficient, and it has 
-                    evolved into a passion for transforming business processes through 
-                    intelligent automation solutions.
+                    I'm a passionate full-stack developer with over 3 years of experience 
+                    creating innovative digital solutions. My journey began with curiosity 
+                    about how things work on the web, and it has evolved into a deep love 
+                    for crafting exceptional user experiences.
                   </p>
                   <p>
-                    I specialize in Robotic Process Automation (RPA), workflow design, 
-                    and system integration. My expertise spans across various automation 
-                    platforms and tools, helping organizations reduce manual effort, 
-                    minimize errors, and increase productivity through smart automation.
+                    I specialize in modern web technologies, with expertise spanning from 
+                    responsive frontend interfaces to scalable backend architectures. 
+                    I believe in writing clean, maintainable code and following best 
+                    practices to deliver robust solutions.
                   </p>
                   <p>
-                    When I'm not designing automation solutions, you'll find me exploring 
-                    new RPA tools, optimizing existing processes, or sharing knowledge 
-                    about automation best practices with the community.
+                    When I'm not coding, you'll find me exploring new technologies, 
+                    contributing to open-source projects, or sharing knowledge with 
+                    the developer community.
                   </p>
                 </div>
               </div>
@@ -139,12 +139,12 @@ const About = () => {
                     <p className="text-muted-foreground">University Name • 2020-2024</p>
                   </div>
                   <div className="border-l-2 border-neon-purple pl-4">
-                    <h4 className="font-semibold">UiPath RPA Developer Certification</h4>
-                    <p className="text-muted-foreground">UiPath • 2023</p>
+                    <h4 className="font-semibold">AWS Certified Developer</h4>
+                    <p className="text-muted-foreground">Amazon Web Services • 2023</p>
                   </div>
                   <div className="border-l-2 border-neon-cyan pl-4">
-                    <h4 className="font-semibold">Automation Anywhere Certified</h4>
-                    <p className="text-muted-foreground">Automation Anywhere • 2022</p>
+                    <h4 className="font-semibold">React Professional Certificate</h4>
+                    <p className="text-muted-foreground">Meta • 2022</p>
                   </div>
                 </div>
               </div>

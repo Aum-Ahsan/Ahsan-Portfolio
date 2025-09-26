@@ -81,10 +81,11 @@ const Projects = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
-              My Projects
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+            
+              <span className="gradient-text">My Projects</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/90 max-w-3xl mx-auto font-medium">
               A showcase of my work, from web applications to mobile solutions
             </p>
           </motion.div>
@@ -96,7 +97,7 @@ const Projects = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-neon-blue mb-8 flex items-center">
+            <h2 className="text-2xl font-bold text-neon-blue mb-8 flex items-center drop-shadow-lg">
               <Star className="mr-2 h-6 w-6" />
               Featured Projects
             </h2>
@@ -118,8 +119,8 @@ const Projects = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 text-neon-purple">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                    <h3 className="text-xl font-bold mb-2 text-neon-purple drop-shadow-lg">{project.title}</h3>
+                    <p className="text-foreground/80 mb-4 text-sm leading-relaxed font-medium">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -154,7 +155,7 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <h2 className="text-2xl font-bold text-neon-cyan mb-8">All Projects</h2>
+            <h2 className="text-2xl font-bold text-neon-cyan mb-8 drop-shadow-lg">All Projects</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.map((project, index) => (
                 <motion.div
@@ -177,8 +178,8 @@ const Projects = () => {
                     )}
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold mb-2">{project.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
+                    <h3 className="font-semibold mb-2 text-foreground drop-shadow-lg">{project.title}</h3>
+                    <p className="text-foreground/80 text-sm mb-3 line-clamp-2 font-medium">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-1 mb-3">

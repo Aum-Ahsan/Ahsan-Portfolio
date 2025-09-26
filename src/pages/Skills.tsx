@@ -114,10 +114,11 @@ const Skills = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
-              My Skills
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+            
+              <span className="gradient-text">My Skills</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/90 max-w-3xl mx-auto font-medium">
               A comprehensive overview of my technical expertise and capabilities
             </p>
           </motion.div>
@@ -136,15 +137,15 @@ const Skills = () => {
                   <div className={`p-3 rounded-lg bg-${category.color}/10 border border-${category.color}/20 mr-4`}>
                     <category.icon className={`h-6 w-6 text-${category.color}`} />
                   </div>
-                  <h3 className="text-xl font-bold">{category.title}</h3>
+                  <h3 className="text-xl font-bold text-foreground drop-shadow-lg">{category.title}</h3>
                 </div>
                 
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skill.name}>
                       <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className={`text-sm text-${category.color}`}>{skill.level}%</span>
+                        <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                        <span className={`text-sm text-${category.color} font-bold`}>{skill.level}%</span>
                       </div>
                       <div className="w-full bg-muted rounded-full h-2">
                         <motion.div
@@ -174,7 +175,7 @@ const Skills = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mb-16"
           >
-            <h2 className="text-3xl font-bold text-center mb-12 gradient-text">
+            <h2 className="text-3xl font-bold text-center mb-12 gradient-text drop-shadow-lg">
               Soft Skills & Qualities
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -191,8 +192,8 @@ const Skills = () => {
                       <skill.icon className="h-8 w-8 text-primary" />
                     </div>
                   </div>
-                  <h3 className="font-bold text-lg mb-2">{skill.name}</h3>
-                  <p className="text-muted-foreground text-sm">{skill.description}</p>
+                  <h3 className="font-bold text-lg mb-2 text-foreground drop-shadow-lg">{skill.name}</h3>
+                  <p className="text-foreground/80 text-sm font-medium">{skill.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -205,7 +206,7 @@ const Skills = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="cyber-card p-8"
           >
-            <h2 className="text-3xl font-bold text-center mb-12 gradient-text">
+            <h2 className="text-3xl font-bold text-center mb-12 gradient-text drop-shadow-lg">
               Experience Timeline
             </h2>
             <div className="space-y-8">
