@@ -212,8 +212,8 @@ const Hero = () => {
               transition={{ duration: 2, repeat: Infinity }}
               className="flex flex-col items-center space-y-2 text-muted-foreground"
             >
-              <span className="text-sm">Scroll to explore</span>
-              <ArrowDown className="h-5 w-5 text-neon-blue" />
+              <span className="text-sm">Thank you</span>
+             
             </motion.div>
           </motion.div>
         </div>
