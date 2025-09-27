@@ -4,7 +4,6 @@ import ThreeScene from '@/components/ThreeScene';
 import PageTransition from '@/components/PageTransition';
 import { ArrowDown, Download, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ahsanImage from './ahsan.jpeg';
 
 const Hero = () => {
   return (
@@ -118,13 +117,9 @@ const Hero = () => {
               <div className="relative">
                 <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-neon-blue shadow-2xl neon-glow">
                   <img
-                    src={ahsanImage}
+                    src="/ahsan.jpeg" // Ensure ahsan.jpeg is placed in the public folder
                     alt="Ahsan - Full Stack Developer"
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // Fallback to a placeholder if image doesn't exist
-                      e.currentTarget.src = "./ahsan.jpeg";
-                    }}
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-neon-green rounded-full border-4 border-background flex items-center justify-center">
