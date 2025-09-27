@@ -135,8 +135,8 @@ const About = () => {
                 <h3 className="text-xl font-bold text-neon-pink mb-6">Education & Certifications</h3>
                 <div className="space-y-4">
                   <div className="border-l-2 border-neon-blue pl-4">
-                    <h4 className="font-semibold">Bachelor's in Computer Science</h4>
-                    <p className="text-muted-foreground">University Name • 2020-2024</p>
+                    <h4 className="font-semibold">Bachelor's in Information and Communication Technology (Hons)</h4>
+                    <p className="text-muted-foreground">University of Jaffna • 2023-2026</p>
                   </div>
                   <div className="border-l-2 border-neon-purple pl-4">
                     <h4 className="font-semibold">AWS Certified Developer</h4>

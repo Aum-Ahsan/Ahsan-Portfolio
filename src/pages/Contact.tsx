@@ -30,19 +30,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@yourname.dev",
-      link: "mailto:hello@yourname.dev"
+      value: "ahsanaum3@gmail.com",
+      link: "ahsanaum3@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+94757106255",
+      link: "tel:+94757106255"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "355,Ganthiyar Road Eravur-03,Batticaloa, Srilanka",
       link: "#"
     }
   ];
@@ -51,31 +51,19 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: Github,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/Aum-Ahsan",
       color: "text-gray-400 hover:text-white"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/mohamed-ahsan-85baa5269/",
       color: "text-blue-400 hover:text-blue-300"
-    },
-    {
-      name: "Twitter",
-      icon: Twitter,
-      url: "https://twitter.com/yourusername",
-      color: "text-sky-400 hover:text-sky-300"
-    },
-    {
-      name: "Instagram",
-      icon: Instagram,
-      url: "https://instagram.com/yourusername",
-      color: "text-pink-400 hover:text-pink-300"
     },
     {
       name: "YouTube",
       icon: Youtube,
-      url: "https://youtube.com/@yourusername",
+      url: "https://www.youtube.com/@ahsanaum2680",
       color: "text-red-400 hover:text-red-300"
     }
   ];
@@ -316,6 +304,7 @@ const Contact = () => {
               <Button size="lg" variant="outline" className="neon-border">
                 <Phone className="mr-2 h-5 w-5" />
                 Schedule a Call
+                
               </Button>
             </div>
           </motion.div>
