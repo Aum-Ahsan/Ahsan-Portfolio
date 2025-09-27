@@ -5,6 +5,9 @@ import PageTransition from '@/components/PageTransition';
 import { ArrowDown, Download, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+// ✅ Import your profile image from src/assets
+import profilePic from '@/assets/ahsan.jpeg';
+
 const Hero = () => {
   return (
     <PageTransition className="hero-gradient relative overflow-hidden">
@@ -107,7 +110,7 @@ const Hero = () => {
               </motion.p>
             </motion.div>
 
-            {/* Right Column - Profile Photo */}
+            {/* ✅ Right Column - Profile Photo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5, x: 50 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -117,7 +120,7 @@ const Hero = () => {
               <div className="relative">
                 <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-neon-blue shadow-2xl neon-glow">
                   <img
-                    src="/ahsan.jpeg" // Ensure ahsan.jpeg is placed in the public folder
+                    src={profilePic} // ✅ Using imported image
                     alt="Ahsan - Full Stack Developer"
                     className="w-full h-full object-cover"
                   />
@@ -125,43 +128,20 @@ const Hero = () => {
                 <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-neon-green rounded-full border-4 border-background flex items-center justify-center">
                   <div className="w-4 h-4 bg-neon-green rounded-full animate-pulse"></div>
                 </div>
-                {/* Floating elements around the photo */}
+                {/* Floating elements */}
                 <motion.div
-                  animate={{ 
-                    y: [0, -20, 0],
-                    rotate: [0, 5, 0]
-                  }}
-                  transition={{ 
-                    duration: 4, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
-                  }}
+                  animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -top-8 -left-8 w-6 h-6 bg-neon-cyan rounded-full opacity-60"
                 />
                 <motion.div
-                  animate={{ 
-                    y: [0, 15, 0],
-                    rotate: [0, -5, 0]
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity, 
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
+                  animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   className="absolute -bottom-8 -left-8 w-4 h-4 bg-neon-purple rounded-full opacity-60"
                 />
                 <motion.div
-                  animate={{ 
-                    y: [0, -10, 0],
-                    x: [0, 10, 0]
-                  }}
-                  transition={{ 
-                    duration: 2.5, 
-                    repeat: Infinity, 
-                    ease: "easeInOut",
-                    delay: 0.5
-                  }}
+                  animate={{ y: [0, -10, 0], x: [0, 10, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                   className="absolute top-1/2 -right-8 w-5 h-5 bg-neon-pink rounded-full opacity-60"
                 />
               </div>
@@ -175,24 +155,24 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 1.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-12"
           >
-              <Button 
-                size="lg" 
-                className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
-                onClick={() => window.location.href = '/contact'}
-              >
-                <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                Let's Connect
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
-              >
-                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                Download Resume
-              </Button>
-            </motion.div>
+            <Button 
+              size="lg" 
+              className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
+              onClick={() => window.location.href = '/contact'}
+            >
+              <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+              Let's Connect
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
+            >
+              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+              Download Resume
+            </Button>
+          </motion.div>
 
           {/* Achievements */}
           <motion.div
@@ -207,18 +187,18 @@ const Hero = () => {
               { number: "20+", label: "Technologies" },
               { number: "100%", label: "Client Satisfaction" },
             ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.6 + index * 0.1 }}
-                  className="text-center cyber-card p-6 hover:scale-105 transition-transform"
-                >
-                  <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.number}</div>
-                  <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.6 + index * 0.1 }}
+                className="text-center cyber-card p-6 hover:scale-105 transition-transform"
+              >
+                <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.number}</div>
+                <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
 
           {/* Scroll Indicator */}
           <motion.div
