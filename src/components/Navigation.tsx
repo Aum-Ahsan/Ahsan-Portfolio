@@ -31,7 +31,7 @@ const Navigation = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="text-2xl font-bold gradient-text">
-              Portfolio
+             Ahsan's Portfolio
             </Link>
 
             {/* Desktop Menu */}
