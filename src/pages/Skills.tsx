@@ -15,90 +15,101 @@ import {
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Programming & Core",
       icon: Code,
       color: "neon-blue",
       skills: [
-        { name: "React.js", level: 95 },
-        { name: "Next.js", level: 90 },
-        { name: "TypeScript", level: 88 },
-        { name: "Vue.js", level: 85 },
-        { name: "Tailwind CSS", level: 92 },
-        { name: "Framer Motion", level: 87 },
+        { name: "Java", level: 92 },
+        { name: "JavaScript", level: 90 },
+        { name: "C#", level: 85 },
+        { name: "Python", level: 82 },
+        { name: "C / C++", level: 80 },
+        { name: "OOP & DSA", level: 88 },
       ]
     },
     {
-      title: "Backend Development",
+      title: "Web Development",
       icon: Database,
       color: "neon-purple",
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 88 },
+        { name: "React.js", level: 90 },
+        { name: "Node.js", level: 88 },
+        { name: "Express.js", level: 85 },
         { name: "MongoDB", level: 82 },
-        { name: "GraphQL", level: 78 },
-        { name: "REST APIs", level: 93 },
+        { name: "HTML / CSS", level: 95 },
+        { name: "REST APIs", level: 90 },
       ]
     },
     {
-      title: "Mobile Development",
+      title: "Desktop Development",
       icon: Smartphone,
       color: "neon-cyan",
       skills: [
-        { name: "React Native", level: 85 },
-        { name: "Flutter", level: 75 },
-        { name: "iOS (Swift)", level: 70 },
-        { name: "Android (Kotlin)", level: 72 },
-        { name: "Expo", level: 88 },
-        { name: "PWA", level: 90 },
+        { name: "C# .NET", level: 88 },
+        { name: "Windows Forms", level: 85 },
+        { name: "Java Swing", level: 87 },
+        { name: "MySQL", level: 90 },
+        { name: "OpenCV", level: 75 },
       ]
     },
     {
-      title: "Cloud & DevOps",
+      title: "Tools & Platforms",
       icon: Cloud,
       color: "neon-pink",
       skills: [
-        { name: "AWS", level: 82 },
-        { name: "Docker", level: 85 },
-        { name: "Kubernetes", level: 75 },
-        { name: "CI/CD", level: 80 },
-        { name: "Terraform", level: 70 },
-        { name: "Nginx", level: 78 },
-      ]
-    },
-    {
-      title: "Design & UX",
-      icon: Palette,
-      color: "neon-blue",
-      skills: [
-        { name: "Figma", level: 88 },
-        { name: "Adobe XD", level: 82 },
-        { name: "UI/UX Design", level: 85 },
-        { name: "Prototyping", level: 80 },
-        { name: "User Research", level: 75 },
-        { name: "Design Systems", level: 90 },
-      ]
-    },
-    {
-      title: "Tools & Others",
-      icon: Settings,
-      color: "neon-purple",
-      skills: [
         { name: "Git & GitHub", level: 95 },
         { name: "VS Code", level: 98 },
+        { name: "Eclipse / NetBeans", level: 88 },
         { name: "Postman", level: 90 },
-        { name: "Jira", level: 85 },
-        { name: "Slack", level: 92 },
-        { name: "Linux", level: 83 },
+        { name: "Linux", level: 80 },
       ]
     }
   ];
 
   const softSkills = [
     { name: "Problem Solving", icon: Brain, description: "Analytical thinking and creative solutions" },
-    { name: "Team Leadership", icon: Settings, description: "Leading and mentoring development teams" },
-    { name: "Communication", icon: Code, description: "Clear technical communication with stakeholders" },
-    { name: "Security Mindset", icon: Shield, description: "Security-first development approach" },
+    { name: "Teamwork", icon: Settings, description: "Collaborating effectively in group projects" },
+    { name: "Communication", icon: Code, description: "Clear technical and non-technical communication" },
+    { name: "Adaptability", icon: Shield, description: "Quick learning and adjusting to challenges" },
+  ];
+
+  const timeline = [
+    {
+      year: "2023 – Present",
+      title: "Undergraduate (BICT Hons)",
+      company: "University of Jaffna (Vavuniya Campus)",
+      description: "Pursuing BICT (Hons) with focus on Software Engineering, Web & Desktop Applications."
+    },
+    {
+      year: "2025",
+      title: "Member",
+      company: "AIESEC & IEEE Student Branch",
+      description: "Active participation in leadership and technology communities."
+    },
+    {
+      year: "Jan 2025",
+      title: "Leadership Training Program",
+      company: "Career Guidance Unit & Vision Global Empowerment",
+      description: "Completed leadership & personal development training."
+    },
+    {
+      year: "May 2025",
+      title: "Ultimate API Workshop",
+      company: "University of Vavuniya",
+      description: "Hands-on training on Postman & API Testing."
+    },
+    {
+      year: "2025",
+      title: "Oratosphere Award",
+      company: "Gavel Club, UoV",
+      description: "Recognized for excellence in public speaking & communication."
+    },
+    {
+      year: "2024/2025",
+      title: "Member",
+      company: "University Muslim Majlis / Helping Hands Project",
+      description: "Engaged in community service and social activities."
+    }
   ];
 
   return (
@@ -115,11 +126,10 @@ const Skills = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-            
               <span className="gradient-text">My Skills</span>
             </h1>
             <p className="text-xl text-foreground/90 max-w-3xl mx-auto font-medium">
-              A comprehensive overview of my technical expertise and capabilities
+              A comprehensive overview of my technical expertise and extracurricular journey
             </p>
           </motion.div>
 
@@ -199,7 +209,7 @@ const Skills = () => {
             </div>
           </motion.div>
 
-          {/* Experience Timeline */}
+          {/* Academic & Activities Timeline */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -207,29 +217,10 @@ const Skills = () => {
             className="cyber-card p-8"
           >
             <h2 className="text-3xl font-bold text-center mb-12 gradient-text drop-shadow-lg">
-              Experience Timeline
+              Academic & Activities Timeline
             </h2>
             <div className="space-y-8">
-              {[
-                {
-                  year: "2024 - Present",
-                  title: "Senior Full Stack Developer",
-                  company: "Tech Innovations Inc.",
-                  description: "Leading development of enterprise-scale applications using React, Node.js, and cloud technologies."
-                },
-                {
-                  year: "2022 - 2024",
-                  title: "Full Stack Developer",
-                  company: "Digital Solutions Co.",
-                  description: "Developed and maintained multiple web applications, improved performance by 40%, and mentored junior developers."
-                },
-                {
-                  year: "2021 - 2022",
-                  title: "Junior Frontend Developer",
-                  company: "StartUp Hub",
-                  description: "Built responsive user interfaces and collaborated closely with design and backend teams."
-                }
-              ].map((exp, index) => (
+              {timeline.map((exp, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -50 }}

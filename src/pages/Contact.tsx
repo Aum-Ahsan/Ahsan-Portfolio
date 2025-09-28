@@ -8,8 +8,6 @@ import {
   Send, 
   Github, 
   Linkedin, 
-  Twitter, 
-  Instagram,
   Youtube,
   ExternalLink
 } from 'lucide-react';
@@ -31,18 +29,18 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       value: "ahsanaum3@gmail.com",
-      link: "ahsanaum3@gmail.com"
+      link: "mailto:ahsanaum3@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+94757106255",
+      value: "+94 757106255",
       link: "tel:+94757106255"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "355,Ganthiyar Road Eravur-03,Batticaloa, Srilanka",
+      value: "Batticaloa, Eastern Province, Sri Lanka",
       link: "#"
     }
   ];
@@ -71,33 +69,26 @@ const Contact = () => {
   const codingProfiles = [
     {
       name: "LeetCode",
-      url: "https://leetcode.com/yourusername",
-      description: "500+ problems solved",
-      badge: "Expert"
+      url: "https://leetcode.com/",
+      description: "Practice coding problems",
+      badge: "Learning"
     },
     {
       name: "GitHub",
-      url: "https://github.com/yourusername",
-      description: "50+ repositories",
+      url: "https://github.com/Aum-Ahsan",
+      description: "Projects & repositories",
       badge: "Active"
     },
     {
       name: "Stack Overflow",
-      url: "https://stackoverflow.com/users/yourid",
-      description: "Top 10% contributor",
-      badge: "Gold"
-    },
-    {
-      name: "Codepen",
-      url: "https://codepen.io/yourusername",
-      description: "Creative coding demos",
-      badge: "Featured"
+      url: "https://stackoverflow.com/",
+      description: "Community contributions",
+      badge: "Member"
     }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log("Form submitted:", formData);
   };
 
@@ -304,7 +295,6 @@ const Contact = () => {
               <Button size="lg" variant="outline" className="neon-border">
                 <Phone className="mr-2 h-5 w-5" />
                 Schedule a Call
-                
               </Button>
             </div>
           </motion.div>

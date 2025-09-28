@@ -5,17 +5,17 @@ import { Code, Coffee, Zap, Heart, Settings, Cpu, Workflow, Target } from 'lucid
 
 const About = () => {
   const skills = [
-    { name: "Frontend", level: 95, color: "neon-blue" },
-    { name: "Backend", level: 88, color: "neon-purple" },
-    { name: "Mobile", level: 82, color: "neon-cyan" },
-    { name: "DevOps", level: 75, color: "neon-pink" },
+    { name: "Java / OOP", level: 90, color: "neon-blue" },
+    { name: "MERN Stack", level: 85, color: "neon-purple" },
+    { name: "C# / .NET", level: 80, color: "neon-cyan" },
+    { name: "SQL / MySQL", level: 88, color: "neon-pink" },
   ];
 
   const interests = [
-    { icon: Code, title: "Clean Code", description: "Writing maintainable and scalable code" },
-    { icon: Coffee, title: "Coffee Lover", description: "Fuel for late-night coding sessions" },
-    { icon: Zap, title: "Innovation", description: "Always exploring new technologies" },
-    { icon: Heart, title: "Open Source", description: "Contributing to the community" },
+    { icon: Code, title: "Problem Solving", description: "Enjoy tackling coding challenges and algorithms" },
+    { icon: Zap, title: "Innovation", description: "Exploring new technologies & building creative projects" },
+    { icon: Heart, title: "Collaboration", description: "Working with teams to build impactful solutions" },
+    { icon: Coffee, title: "Continuous Learning", description: "Always eager to improve skills and knowledge" },
   ];
 
   return (
@@ -32,11 +32,10 @@ const About = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-            
               <span className="gradient-text">About Me</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Passionate developer crafting digital experiences that matter
+              Motivated BICT (Hons) undergraduate & full-stack developer passionate about building web and desktop applications.
             </p>
           </motion.div>
 
@@ -52,21 +51,14 @@ const About = () => {
                 <h2 className="text-2xl font-bold text-neon-blue mb-4">My Journey</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    I'm Ahsan passionate full-stack developer with over 3 years of experience 
-                    creating innovative digital solutions. My journey began with curiosity 
-                    about how things work on the web, and it has evolved into a deep love 
-                    for crafting exceptional user experiences.
+                    I'm Ahsan, a BICT (Hons) undergraduate at the University of Jaffna (Vavuniya Campus). 
+                    Skilled in Java, JavaScript, C#, and MERN stack, I enjoy creating web and desktop applications that solve real-world problems.
                   </p>
                   <p>
-                    I specialize in modern web technologies, with expertise spanning from 
-                    responsive frontend interfaces to scalable backend architectures. 
-                    I believe in writing clean, maintainable code and following best 
-                    practices to deliver robust solutions.
+                    My experience includes building an Attendance Management System with QR + Face Recognition and a Learning Management System with C# & MySQL.
                   </p>
                   <p>
-                    When I'm not coding, you'll find me exploring new technologies, 
-                    contributing to open-source projects, or sharing knowledge with 
-                    the developer community.
+                    Beyond coding, I actively contribute to student clubs like AIESEC, Gavel Club, and IEEE, which help me grow as a leader and communicator.
                   </p>
                 </div>
               </div>
@@ -100,7 +92,7 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Right Column - Interests */}
+            {/* Right Column - Interests + Education */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -135,16 +127,20 @@ const About = () => {
                 <h3 className="text-xl font-bold text-neon-pink mb-6">Education & Certifications</h3>
                 <div className="space-y-4">
                   <div className="border-l-2 border-neon-blue pl-4">
-                    <h4 className="font-semibold">Bachelor's in Information and Communication Technology (Hons)</h4>
-                    <p className="text-muted-foreground">University of Jaffna • 2023-2026</p>
+                    <h4 className="font-semibold">Bachelor of ICT (Hons)</h4>
+                    <p className="text-muted-foreground">University of Jaffna, Vavuniya Campus • 2023-2026</p>
                   </div>
                   <div className="border-l-2 border-neon-purple pl-4">
-                    <h4 className="font-semibold">AWS Certified Developer</h4>
-                    <p className="text-muted-foreground">Amazon Web Services • 2023</p>
+                    <h4 className="font-semibold">Ultimate API Workshop – Postman & API Testing</h4>
+                    <p className="text-muted-foreground">University of Vavuniya • May 2025</p>
                   </div>
                   <div className="border-l-2 border-neon-cyan pl-4">
-                    <h4 className="font-semibold">React Professional Certificate</h4>
-                    <p className="text-muted-foreground">Meta • 2022</p>
+                    <h4 className="font-semibold">Leadership Training Program</h4>
+                    <p className="text-muted-foreground">Career Guidance Unit • Jan 2025</p>
+                  </div>
+                  <div className="border-l-2 border-neon-pink pl-4">
+                    <h4 className="font-semibold">Oratosphere Award</h4>
+                    <p className="text-muted-foreground">Public Speaking • Gavel Club • 2025</p>
                   </div>
                 </div>
               </div>
