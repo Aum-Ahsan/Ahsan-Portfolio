@@ -1,226 +1,208 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ParticlesBackground from '@/components/ParticlesBackground';
-import ThreeScene from '@/components/ThreeScene';
 import PageTransition from '@/components/PageTransition';
-import { ArrowDown, Download, Mail } from 'lucide-react';
+import { Download, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-// ✅ Import your profile image from src/assets
 import profilePic from '@/assets/ahsan.jpeg';
 
+// Looping typing effect component
+const LoopingTypingText = ({ phrases, speed = 80, deleteSpeed = 50, delay = 1200 }) => {
+    const [text, setText] = useState('');
+    const [phraseIndex, setPhraseIndex] = useState(0);
+    const [charIndex, setCharIndex] = useState(0);
+    const [deleting, setDeleting] = useState(false);
+
+    useEffect(() => {
+        const currentPhrase = phrases[phraseIndex];
+        let timer;
+
+        if (!deleting) {
+            if (charIndex < currentPhrase.length) {
+                timer = setTimeout(() => setCharIndex(charIndex + 1), speed);
+                setText(currentPhrase.slice(0, charIndex + 1));
+            } else {
+                timer = setTimeout(() => setDeleting(true), delay);
+            }
+        } else {
+            if (charIndex > 0) {
+                timer = setTimeout(() => setCharIndex(charIndex - 1), deleteSpeed);
+                setText(currentPhrase.slice(0, charIndex - 1));
+            } else {
+                setDeleting(false);
+                setPhraseIndex((phraseIndex + 1) % phrases.length);
+            }
+        }
+
+        return () => clearTimeout(timer);
+    }, [charIndex, deleting, phraseIndex, phrases, speed, deleteSpeed, delay]);
+
+    return (
+        <span className="bg-gradient-to-r from-neon-blue via-neon-purple to-neon-cyan bg-clip-text text-transparent font-bold">
+            {text}
+            <span className="animate-pulse">|</span>
+        </span>
+    );
+};
+
+// New design objects: AnimatedDesign provides new design elements
+const AnimatedDesign = () => {
+    return (
+        <>
+            {/* Rotating Square */}
+            <motion.div
+                className="absolute top-1/4 left-0 w-24 h-24 bg-purple-500 rounded-sm opacity-40"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+            />
+            {/* Floating Triangle */}
+            <motion.div
+                className="absolute bottom-1/4 right-0 w-0 h-0 border-l-16 border-r-16 border-b-24 border-l-transparent border-r-transparent border-b-pink-500 opacity-40"
+                animate={{ y: [0, -30, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+            />
+        </>
+    );
+};
+
 const Hero = () => {
-  return (
-    <PageTransition className="hero-gradient relative overflow-hidden">
-      <ParticlesBackground />
-      <ThreeScene />
-      
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-8"
-            >
-              {/* Greeting */}
-              <motion.p
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-neon-cyan text-lg md:text-xl font-medium"
-              >
-                Hello, I'm
-              </motion.p>
+    return (
+        <PageTransition className="hero-gradient relative overflow-hidden">
+            {/* New Design Objects */}
+            <AnimatedDesign />
 
-              {/* Main Title */}
-              <motion.h1
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-4xl md:text-7xl lg:text-8xl font-bold leading-tight"
-              >
-                <span className="gradient-text">Ahsan</span>
-              </motion.h1>
+            <div className="relative z-10 min-h-screen flex items-center justify-center px-6">
+                <div className="max-w-4xl mx-auto text-center">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="space-y-8"
+                        >
+                            <motion.p
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                className="text-neon-cyan text-lg md:text-xl font-medium"
+                            >
+                                Hello, I'm
+                            </motion.p>
 
-              {/* Animated Subtitle */}
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="text-xl md:text-3xl lg:text-4xl text-muted-foreground font-light"
-              >
-                <div className="flex flex-wrap items-center">
-                  {"Full Stack Developer".split("").map((letter, index) => (
-                    <motion.span
-                      key={index}
-                      initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                      animate={{ 
-                        opacity: 1, 
-                        y: 0, 
-                        scale: 1,
-                        backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-                      }}
-                      transition={{ 
-                        duration: 0.5, 
-                        delay: 0.5 + index * 0.1,
-                        backgroundPosition: {
-                          duration: 3,
-                          repeat: Infinity,
-                          ease: "linear",
-                          delay: 2.0 + index * 0.1
-                        }
-                      }}
-                      className="bg-gradient-to-r from-neon-blue via-neon-purple to-neon-cyan bg-[length:200%_100%] bg-clip-text text-transparent font-bold"
-                      style={{
-                        textShadow: "0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(168, 85, 247, 0.3)"
-                      }}
-                    >
-                      {letter === " " ? "\u00A0" : letter}
-                    </motion.span>
-                  ))}
-                  <motion.span 
-                    className="text-neon-purple ml-2"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: [0.7, 1, 0.7]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 3.0
-                    }}
-                  >
-                    & Creative Coder
-                  </motion.span>
+                            <motion.h1
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.8, delay: 0.6 }}
+                                className="text-4xl md:text-7xl lg:text-8xl font-bold leading-tight"
+                            >
+                                <span className="gradient-text">Ahsan</span>
+                            </motion.h1>
+
+                            {/* Looping animated subtitle */}
+                            <motion.h2
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.8 }}
+                                className="text-xl md:text-3xl lg:text-4xl text-gray-900 dark:text-gray-100 font-light"
+                            >
+                                <LoopingTypingText
+                                    phrases={[
+                                        "Software Engineer & Creative Coder",
+                                        "I love programming"
+                                    ]}
+                                    speed={80}
+                                    deleteSpeed={50}
+                                    delay={1200}
+                                />
+                            </motion.h2>
+
+                            {/* Description */}
+                            <motion.p
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 1.4 }}
+                              className="text-lg md:text-xl leading-relaxed text-gray-900 dark:text-gray-100"
+                            >
+                              <span className="text-blue-600 dark:text-cyan-400">
+                                I’m a software engineer
+                              </span>
+                              <span className="text-purple-700 dark:text-pink-400">
+                                {" and creative coder, "}
+                              </span>
+                              <span className="text-cyan-700 dark:text-blue-300">
+                                passionate about crafting web and desktop applications.
+                              </span>
+                              <span className="text-gray-800 dark:text-gray-300">
+                                {" I love solving problems, exploring new technologies, and building innovative solutions that make a difference."}
+                              </span>
+                            </motion.p>
+                        </motion.div>
+
+                        {/* Right Column - Profile */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.5, x: 50 }}
+                            animate={{ opacity: 1, scale: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="flex justify-center lg:justify-end"
+                        >
+                            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-neon-blue shadow-2xl neon-glow">
+                                <img
+                                    src={profilePic}
+                                    alt="Ahsan - Software Engineer"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* CTA Buttons */}
+                    <div className="flex flex-col items-start pt-12">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.6 }}
+                            className="flex flex-col sm:flex-row gap-4 justify-start items-start"
+                        >
+                            <Button
+                                size="lg"
+                                className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
+                                onClick={() => window.location.href = '/contact'}
+                            >
+                                <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+                                Let's Connect
+                            </Button>
+
+                            <Button
+                                variant="outline"
+                                size="lg"
+                                className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
+                                onClick={() => window.open('https://docs.google.com/document/d/10CLRFheuoR1-4-BFoDuRIDpaKi9TCXNxqMtCJtKeXDg/edit?usp=sharing', '_blank')}
+                            >
+                                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+                                View Resume
+                            </Button>
+                        </motion.div>
+
+                        {/* New Centered-Left Button Below */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 2.0 }}
+                            className="mt-8"
+                        >
+                            <Button
+                                size="lg"
+                                className="neon-glow bg-secondary text-secondary-foreground hover:bg-secondary-glow px-8 py-4 text-lg font-semibold group"
+                                onClick={() => window.location.href = '/projects'}
+                            >
+                                Explore My Projects
+                            </Button>
+                        </motion.div>
+                    </div>
                 </div>
-              </motion.h2>
-
-              {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                className="text-lg md:text-xl text-muted-foreground leading-relaxed"
-              >
-                Crafting exceptional digital experiences with cutting-edge technologies. 
-                Passionate about creating innovative solutions that make a difference.
-              </motion.p>
-            </motion.div>
-
-            {/* ✅ Right Column - Profile Photo */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5, x: 50 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex justify-center lg:justify-end"
-            >
-              <div className="relative">
-                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-neon-blue shadow-2xl neon-glow">
-                  <img
-                    src={profilePic} // ✅ Using imported image
-                    alt="Ahsan - Full Stack Developer"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-neon-green rounded-full border-4 border-background flex items-center justify-center">
-                  <div className="w-4 h-4 bg-neon-green rounded-full animate-pulse"></div>
-                </div>
-                {/* Floating elements */}
-                <motion.div
-                  animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-8 -left-8 w-6 h-6 bg-neon-cyan rounded-full opacity-60"
-                />
-                <motion.div
-                  animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -bottom-8 -left-8 w-4 h-4 bg-neon-purple rounded-full opacity-60"
-                />
-                <motion.div
-                  animate={{ y: [0, -10, 0], x: [0, 10, 0] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute top-1/2 -right-8 w-5 h-5 bg-neon-pink rounded-full opacity-60"
-                />
-              </div>
-            </motion.div>
-          </div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-12"
-          >
-            <Button 
-              size="lg" 
-              className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
-              onClick={() => window.location.href = '/contact'}
-            >
-              <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-              Let's Connect
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
-              onClick={() => window.open('https://docs.google.com/document/d/10CLRFheuoR1-4-BFoDuRIDpaKi9TCXNxqMtCJtKeXDg/edit?usp=sharing', '_blank')}
-            >
-              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-              Download Resume
-            </Button>
-          </motion.div>
-
-          {/* Achievements */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 max-w-3xl mx-auto"
-          >
-            {[
-              { number: "50+", label: "Projects Completed" },
-              { number: "3+", label: "Years Experience" },
-              { number: "20+", label: "Technologies" },
-              { number: "100%", label: "Client Satisfaction" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.6 + index * 0.1 }}
-                className="text-center cyber-card p-6 hover:scale-105 transition-transform"
-              >
-                <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.number}</div>
-                <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 2.0 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="flex flex-col items-center space-y-2 text-muted-foreground"
-            >
-              <span className="text-sm">Thank you</span>
-             
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-    </PageTransition>
-  );
+            </div>
+        </PageTransition>
+    );
 };
 
 export default Hero;
