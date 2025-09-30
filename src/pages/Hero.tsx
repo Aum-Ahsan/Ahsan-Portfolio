@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
 import { Download, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profilePic from '@/assets/ahsan.jpeg';
+import profilePic from '@/assets/ahsan.png';
 
 // Looping typing effect component
 const LoopingTypingText = ({ phrases, speed = 80, deleteSpeed = 50, delay = 1200 }) => {
