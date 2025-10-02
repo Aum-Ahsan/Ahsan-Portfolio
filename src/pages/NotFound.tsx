@@ -193,7 +193,7 @@ const Hero = () => {
                             <Button
                                 size="lg"
                                 className="neon-glow bg-secondary text-secondary-foreground hover:bg-secondary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.location.href = '/projects'}
+                                onClick={() => window.open ('https://aum-ahsan.github.io/contact', '_self')}
                             >
                                 Explore My Projects
                             </Button>
