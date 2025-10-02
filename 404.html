@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-      // Get current path
-      var path = window.location.pathname;
-      var repo = "/Ahsan-Portfolio"; // <-- change if your repo name is different
-      var newUrl = repo + "/index.html?redirect=" + encodeURIComponent(path);
+      // preserve the path after refresh
+      var path = window.location.pathname.replace("/Ahsan-Portfolio", "");
+      var newUrl = "/Ahsan-Portfolio/index.html#" + path;
       window.location.replace(newUrl);
     </script>
   </head>
