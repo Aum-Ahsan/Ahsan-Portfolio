@@ -166,9 +166,9 @@ const Hero = () => {
                             <Button
                                 size="lg"
                                 className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.location.href = "tel:+94757106255"}
+                                onClick={() => window.open('https://github.com/Aum-Ahsan', '_blank')}
                             >
-                                <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+                                <Mail className="mr-2 h-5 w-5 group-hover:animate-bounce" />
                                 Let's Connect
                             </Button>
 
