@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import PageTransition from '@/components/PageTransition';
 import { Download, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -45,27 +44,30 @@ const LoopingTypingText = ({ phrases, speed = 80, deleteSpeed = 50, delay = 1200
     );
 };
 
-// Animated design elements
-const AnimatedDesign = () => (
-    <>
-        <motion.div
-            className="absolute top-1/4 left-0 w-24 h-24 bg-purple-500 rounded-sm opacity-40"
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-        />
-        <motion.div
-            className="absolute bottom-1/4 right-0 w-0 h-0 border-l-16 border-r-16 border-b-24 border-l-transparent border-r-transparent border-b-pink-500 opacity-40"
-            animate={{ y: [0, -30, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        />
-    </>
-);
+// New design objects: AnimatedDesign provides new design elements
+const AnimatedDesign = () => {
+    return (
+        <>
+            {/* Rotating Square */}
+            <motion.div
+                className="absolute top-1/4 left-0 w-24 h-24 bg-purple-500 rounded-sm opacity-40"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+            />
+            {/* Floating Triangle */}
+            <motion.div
+                className="absolute bottom-1/4 right-0 w-0 h-0 border-l-16 border-r-16 border-b-24 border-l-transparent border-r-transparent border-b-pink-500 opacity-40"
+                animate={{ y: [0, -30, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+            />
+        </>
+    );
+};
 
 const Hero = () => {
-    const navigate = useNavigate();
-
     return (
         <PageTransition className="hero-gradient relative overflow-hidden">
+            {/* New Design Objects */}
             <AnimatedDesign />
 
             <div className="relative z-10 min-h-screen flex items-center justify-center px-6">
@@ -96,6 +98,7 @@ const Hero = () => {
                                 <span className="gradient-text">Ahsan</span>
                             </motion.h1>
 
+                            {/* Looping animated subtitle */}
                             <motion.h2
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -103,27 +106,35 @@ const Hero = () => {
                                 className="text-xl md:text-3xl lg:text-4xl text-gray-900 dark:text-gray-100 font-light"
                             >
                                 <LoopingTypingText
-                                    phrases={["Software Engineer & Creative Coder", "I love programming"]}
+                                    phrases={[
+                                        "Software Engineer & Creative Coder",
+                                        "I love programming"
+                                    ]}
                                     speed={80}
                                     deleteSpeed={50}
                                     delay={1200}
                                 />
                             </motion.h2>
 
+                            {/* Description */}
                             <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 1.4 }}
-                                className="text-lg md:text-xl leading-relaxed text-gray-900 dark:text-gray-100"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 1.4 }}
+                              className="text-lg md:text-xl leading-relaxed text-gray-900 dark:text-gray-100"
                             >
-                                <span className="text-blue-600 dark:text-cyan-400">I’m a software engineer</span>
-                                <span className="text-purple-700 dark:text-pink-400"> and creative coder, </span>
-                                <span className="text-cyan-700 dark:text-blue-300">
-                                    passionate about crafting web and desktop applications.
-                                </span>
-                                <span className="text-gray-800 dark:text-gray-300">
-                                    {" I love solving problems, exploring new technologies, and building innovative solutions that make a difference."}
-                                </span>
+                              <span className="text-blue-600 dark:text-cyan-400">
+                                I’m a software engineer
+                              </span>
+                              <span className="text-purple-700 dark:text-pink-400">
+                                {" and creative coder, "}
+                              </span>
+                              <span className="text-cyan-700 dark:text-blue-300">
+                                passionate about crafting web and desktop applications.
+                              </span>
+                              <span className="text-gray-800 dark:text-gray-300">
+                                {" I love solving problems, exploring new technologies, and building innovative solutions that make a difference."}
+                              </span>
                             </motion.p>
                         </motion.div>
 
@@ -155,7 +166,7 @@ const Hero = () => {
                             <Button
                                 size="lg"
                                 className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => navigate('/contact')}
+                                onClick={() => window.location.href = '/contact'}
                             >
                                 <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                                 Let's Connect
@@ -172,6 +183,7 @@ const Hero = () => {
                             </Button>
                         </motion.div>
 
+                        {/* New Centered-Left Button Below */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -181,7 +193,7 @@ const Hero = () => {
                             <Button
                                 size="lg"
                                 className="neon-glow bg-secondary text-secondary-foreground hover:bg-secondary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => navigate('/projects')}
+                                onClick={() => window.location.href = '/projects'}
                             >
                                 Explore My Projects
                             </Button>
