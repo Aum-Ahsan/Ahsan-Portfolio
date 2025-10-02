@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // Get current path
+      var path = window.location.pathname;
+      var repo = "/Ahsan-Portfolio"; // <-- change if your repo name is different
+      var newUrl = repo + "/index.html?redirect=" + encodeURIComponent(path);
+      window.location.replace(newUrl);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
