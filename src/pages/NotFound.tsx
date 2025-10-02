@@ -4,6 +4,7 @@ import PageTransition from '@/components/PageTransition';
 import { Download, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profilePic from '@/assets/ahsan.png';
+import { useNavigate } from 'react-router-dom'; // <--- important
 
 // Looping typing effect component
 const LoopingTypingText = ({ phrases, speed = 80, deleteSpeed = 50, delay = 1200 }) => {
@@ -44,32 +45,28 @@ const LoopingTypingText = ({ phrases, speed = 80, deleteSpeed = 50, delay = 1200
     );
 };
 
-// New design objects: AnimatedDesign provides new design elements
-const AnimatedDesign = () => {
-    return (
-        <>
-            {/* Rotating Square */}
-            <motion.div
-                className="absolute top-1/4 left-0 w-24 h-24 bg-purple-500 rounded-sm opacity-40"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-            />
-            {/* Floating Triangle */}
-            <motion.div
-                className="absolute bottom-1/4 right-0 w-0 h-0 border-l-16 border-r-16 border-b-24 border-l-transparent border-r-transparent border-b-pink-500 opacity-40"
-                animate={{ y: [0, -30, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-            />
-        </>
-    );
-};
+// Animated design objects
+const AnimatedDesign = () => (
+    <>
+        <motion.div
+            className="absolute top-1/4 left-0 w-24 h-24 bg-purple-500 rounded-sm opacity-40"
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+        />
+        <motion.div
+            className="absolute bottom-1/4 right-0 w-0 h-0 border-l-16 border-r-16 border-b-24 border-l-transparent border-r-transparent border-b-pink-500 opacity-40"
+            animate={{ y: [0, -30, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        />
+    </>
+);
 
 const Hero = () => {
+    const navigate = useNavigate(); // <--- useNavigate hook
+
     return (
         <PageTransition className="hero-gradient relative overflow-hidden">
-            {/* New Design Objects */}
             <AnimatedDesign />
-
             <div className="relative z-10 min-h-screen flex items-center justify-center px-6">
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -98,7 +95,6 @@ const Hero = () => {
                                 <span className="gradient-text">Ahsan</span>
                             </motion.h1>
 
-                            {/* Looping animated subtitle */}
                             <motion.h2
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -106,17 +102,13 @@ const Hero = () => {
                                 className="text-xl md:text-3xl lg:text-4xl text-gray-900 dark:text-gray-100 font-light"
                             >
                                 <LoopingTypingText
-                                    phrases={[
-                                        "Software Engineer & Creative Coder",
-                                        "I love programming"
-                                    ]}
+                                    phrases={["Software Engineer & Creative Coder", "I love programming"]}
                                     speed={80}
                                     deleteSpeed={50}
                                     delay={1200}
                                 />
                             </motion.h2>
 
-                            {/* Description */}
                             <motion.p
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
@@ -138,7 +130,7 @@ const Hero = () => {
                             </motion.p>
                         </motion.div>
 
-                        {/* Right Column - Profile */}
+                        {/* Right Column */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.5, x: 50 }}
                             animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -166,7 +158,7 @@ const Hero = () => {
                             <Button
                                 size="lg"
                                 className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.location.href = '/contact'}
+                                onClick={() => navigate('/contact')} // <--- fixed
                             >
                                 <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                                 Let's Connect
@@ -183,7 +175,6 @@ const Hero = () => {
                             </Button>
                         </motion.div>
 
-                        {/* New Centered-Left Button Below */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -193,7 +184,7 @@ const Hero = () => {
                             <Button
                                 size="lg"
                                 className="neon-glow bg-secondary text-secondary-foreground hover:bg-secondary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.open ('https://aum-ahsan.github.io/contact', '_self')}
+                                onClick={() => navigate('/projects')} // <--- fixed
                             >
                                 Explore My Projects
                             </Button>
