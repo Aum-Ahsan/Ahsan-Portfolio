@@ -2,11 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <title>Redirecting...</title>
     <script type="text/javascript">
-      // Redirect all 404 requests to index.html for React Router
-      var redirectTo = window.location.protocol + "//" + window.location.host + "/Ahsan-Portfolio/" + "index.html";
-      window.location.replace(redirectTo);
+      // Get current path
+      var path = window.location.pathname;
+      var repo = "/Ahsan-Portfolio"; // <-- change if your repo name is different
+      var newUrl = repo + "/index.html?redirect=" + encodeURIComponent(path);
+      window.location.replace(newUrl);
     </script>
   </head>
-  <body></body>
+  <body>
+    <p>Redirecting...</p>
+  </body>
 </html>
