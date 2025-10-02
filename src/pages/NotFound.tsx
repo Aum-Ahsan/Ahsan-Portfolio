@@ -164,10 +164,9 @@ const Hero = () => {
                             className="flex flex-col sm:flex-row gap-4 justify-start items-start"
                         >
                             <Button
-                                variant="outline"
                                 size="lg"
-                                className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
-                                onClick={() => window.open('https://docs.google.com/document/d/10CLRFheuoR1-4-BFoDuRIDpaKi9TCXNxqMtCJtKeXDg/edit?usp=sharing', '_blank')}
+                                className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
+                                onClick={() => window.location.href = '/contact'}
                             >
                                 <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                                 Let's Connect
@@ -192,10 +191,9 @@ const Hero = () => {
                             className="mt-8"
                         >
                             <Button
-                                variant="outline"
                                 size="lg"
-                                className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
-                                onClick={() => window.open('https://docs.google.com/document/d/10CLRFheuoR1-4-BFoDuRIDpaKi9TCXNxqMtCJtKeXDg/edit?usp=sharing', '_blank')}
+                                className="neon-glow bg-secondary text-secondary-foreground hover:bg-secondary-glow px-8 py-4 text-lg font-semibold group"
+                                onClick={() => window.location.href = '/projects'}
                             >
                                 Explore My Projects
                             </Button>
