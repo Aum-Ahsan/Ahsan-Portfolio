@@ -163,41 +163,45 @@ const Hero = () => {
                             transition={{ duration: 0.6, delay: 1.6 }}
                             className="flex flex-col sm:flex-row gap-4 justify-start items-start"
                         >
-                            <Button
-                                size="lg"
-                                className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.location.href = '/contact'}
-                            >
-                                <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                                Let's Connect
-                            </Button>
+                              {/* Let's Connect Button */}
+    <Link to="/contact">
+        <Button
+            size="lg"
+            className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
+        >
+            <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+            Let's Connect
+        </Button>
+    </Link>
 
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
-                                onClick={() => window.open('https://docs.google.com/document/d/10CLRFheuoR1-4-BFoDuRIDpaKi9TCXNxqMtCJtKeXDg/edit?usp=sharing', '_blank')}
-                            >
-                                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                                View Resume
-                            </Button>
-                        </motion.div>
+    {/* View Resume Button (External Link) */}
+    <Button
+        variant="outline"
+        size="lg"
+        className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
+        onClick={() => window.open('https://docs.google.com/document/d/10CLRFheuoR1-4-BFoDuRIDpaKi9TCXNxqMtCJtKeXDg/edit?usp=sharing', '_blank')}
+    >
+        <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+        View Resume
+    </Button>
+</motion.div>
 
-                        {/* New Centered-Left Button Below */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 2.0 }}
-                            className="mt-8"
-                        >
-                            <Button
-                                size="lg"
-                                className="neon-glow bg-secondary text-secondary-foreground hover:bg-secondary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.location.href = '/projects'}
-                            >
-                                Explore My Projects
-                            </Button>
-                        </motion.div>
+{/* Explore My Projects Button */}
+<motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 2.0 }}
+    className="mt-8"
+>
+    <Link to="/projects">
+        <Button
+            size="lg"
+            className="neon-glow bg-secondary text-secondary-foreground hover:bg-secondary-glow px-8 py-4 text-lg font-semibold group"
+        >
+            Explore My Projects
+        </Button>
+    </Link>
+</motion.div>
                     </div>
                 </div>
             </div>
