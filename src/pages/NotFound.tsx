@@ -166,7 +166,7 @@ const Hero = () => {
                             <Button
                                 size="lg"
                                 className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.open('https://aum-ahsan.github.io/contact', '_blank')}
+                                onClick={() => window.open('https://aum-ahsan.github.io/contact', '_self')}
                             >
                                 <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                                 Let's Connect
@@ -193,7 +193,7 @@ const Hero = () => {
                             <Button
                                 size="lg"
                                 className="neon-glow bg-secondary text-secondary-foreground hover:bg-secondary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.open('https://aum-ahsan.github.io/projects', '_blank')}
+                                onClick={() => window.open('https://aum-ahsan.github.io/projects', '_self')}
                             >
                                 Explore My Projects
                             </Button>
