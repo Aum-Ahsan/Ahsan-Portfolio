@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import profilePic from '@/assets/ahsan.png';
 import { Phone } from "lucide-react";
 import { Github } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 // Looping typing effect component
 const LoopingTypingText = ({ phrases, speed = 80, deleteSpeed = 50, delay = 1200 }) => {
@@ -192,18 +193,17 @@ const Hero = () => {
       Visit My GitHub
     </Button>
         {/* Call Me */}
-    <Button
-      size="lg"
-      className="neon-glow bg-green-600 text-white hover:bg-green-700 px-8 py-4 text-lg font-semibold group"
-      onClick={() => window.open('tel:+94757106255')}
-    >
-      <Phone className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-      Call Me
-    </Button>
-
-
-  </motion.div>
-</div>
+{/* LinkedIn */}
+            <Button
+            size="lg"
+            className="neon-glow bg-[#0A66C2] text-white hover:bg-[#004182] px-8 py-4 text-lg font-semibold group"
+            onClick={() => window.open('https://www.linkedin.com/in/aum-ahsan', '_blank')} // replace with your LinkedIn URL
+            >
+            <Linkedin className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
+            Connect on LinkedIn
+            </Button>
+            </motion.div>
+            </div>
 
                 </div>
             </div>
