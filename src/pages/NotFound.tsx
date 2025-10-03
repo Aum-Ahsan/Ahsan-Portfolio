@@ -197,14 +197,13 @@ const Hero = () => {
             <Button
             size="lg"
             className="neon-glow bg-[#0A66C2] text-white hover:bg-[#004182] px-8 py-4 text-lg font-semibold group"
-            onClick={() => window.open('https://www.linkedin.com/in/aum-ahsan', '_blank')} // replace with your LinkedIn URL
+            onClick={() => window.open('https://www.linkedin.com/in/mohamed-ahsan-85baa5269/', '_blank')}
             >
             <Linkedin className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
             Connect on LinkedIn
             </Button>
             </motion.div>
             </div>
-
                 </div>
             </div>
         </PageTransition>
