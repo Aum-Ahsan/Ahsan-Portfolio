@@ -4,6 +4,8 @@ import PageTransition from '@/components/PageTransition';
 import { Download, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profilePic from '@/assets/ahsan.png';
+import { Phone } from "lucide-react";
+import { Github } from "lucide-react";
 
 // Looping typing effect component
 const LoopingTypingText = ({ phrases, speed = 80, deleteSpeed = 50, delay = 1200 }) => {
@@ -156,49 +158,53 @@ const Hero = () => {
                     </div>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col items-start pt-12">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 1.6 }}
-                            className="flex flex-col sm:flex-row gap-4 justify-start items-start"
-                        >
-                            <Button
-                                size="lg"
-                                className="neon-glow bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.location.href = 'https://www.linkedin.com/in/mohamed-ahsan-85baa5269/'}
-                            >
-                                <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                                Let's Connect
-                            </Button>
+                 {/* CTA Buttons */}
+<div className="flex flex-col items-start pt-12">
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 1.6 }}
+    className="flex flex-col sm:flex-row gap-4 justify-start items-start"
+  >
+    {/* View Resume */}
+    <Button
+      variant="outline"
+      size="lg"
+      className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
+      onClick={() =>
+        window.open(
+          'https://docs.google.com/document/d/10CLRFheuoR1-4-BFoDuRIDpaKi9TCXNxqMtCJtKeXDg/edit?usp=sharing',
+          '_blank'
+        )
+      }
+    >
+      <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+      View Resume
+    </Button>
 
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
-                                onClick={() => window.open('https://docs.google.com/document/d/10CLRFheuoR1-4-BFoDuRIDpaKi9TCXNxqMtCJtKeXDg/edit?usp=sharing', '_blank')}
-                            >
-                                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                                View Resume
-                            </Button>
-                        </motion.div>
+    {/* Visit GitHub */}
+    <Button
+      size="lg"
+      className="neon-glow bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-semibold group rounded-2xl shadow-lg"
+      onClick={() => window.open('https://github.com/Aum-Ahsan', '_blank')}
+    >
+      <Github className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
+      Visit My GitHub
+    </Button>
+        {/* Call Me */}
+    <Button
+      size="lg"
+      className="neon-glow bg-green-600 text-white hover:bg-green-700 px-8 py-4 text-lg font-semibold group"
+      onClick={() => window.open('tel:+94757106255')}
+    >
+      <Phone className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+      Call Me
+    </Button>
 
-                        {/* New Centered-Left Button Below */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 2.0 }}
-                            className="mt-8"
-                        >
-                            <Button
-                                size="lg"
-                                className="neon-glow bg-secondary text-secondary-foreground hover:bg-secondary-glow px-8 py-4 text-lg font-semibold group"
-                                onClick={() => window.location.href = 'https://github.com/Aum-Ahsan'}
-                            >
-                                Explore My Projects
-                            </Button>
-                        </motion.div>
-                    </div>
+
+  </motion.div>
+</div>
+
                 </div>
             </div>
         </PageTransition>
