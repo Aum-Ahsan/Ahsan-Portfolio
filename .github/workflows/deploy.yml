@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy React App to GitHub Pages
 on:
   push:
     branches: ["main"]
@@ -28,7 +28,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # ⚠️ change to ./build if your portfolio output folder is /build
+          path: ./dist  # 👈 or ./build depending on your framework
 
   deploy:
     environment:
