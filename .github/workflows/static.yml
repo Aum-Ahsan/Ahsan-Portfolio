@@ -18,7 +18,7 @@ jobs:
       - name: Upload site files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./  # your HTML/CSS/JS files are in the root folder
+          path: ./  # 👈 make sure your index.html is in the root folder
 
       - name: Deploy to GitHub Pages
         id: deployment
