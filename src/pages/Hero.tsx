@@ -174,13 +174,13 @@ const Hero = () => {
       className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-primary-foreground px-8 py-4 text-lg font-semibold group neon-border"
       onClick={() =>
         window.open(
-          'https://docs.google.com/document/d/10CLRFheuoR1-4-BFoDuRIDpaKi9TCXNxqMtCJtKeXDg/edit?usp=sharing',
+          'https://drive.google.com/file/d/1yxpd3MysYyKyI8O5ydBrLEIZrHtN-g3l/view?usp=drive_link',
           '_blank'
         )
       }
     >
       <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-      View Resume
+      View CV
     </Button>
 
     {/* Visit GitHub */}
